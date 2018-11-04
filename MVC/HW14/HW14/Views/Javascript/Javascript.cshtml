@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Javascript";
+}
+
+<p><h2>Javascript</h2></p>
+<p>
+    <h3>Books:</h3>
+</p>
+<div class="container">
+    <div class="col-lg-4">
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\HTMLandCSSBooks\HTML_CSS_JS.pdf",
+                   fileName = "HTML_CSS_JS.pdf"})">HTML_CSS_JS.pdf</a>(mb)
+        </p>
+        Book series on JS
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\JSBooks\js1.epub",
+                   fileName = "js1.epub"})">js1.epub</a>(4.37 MB)
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\JSBooks\js1.epub",
+                   fileName = "js2.epub"})">js2.epub</a>(4.15 MB)
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\JSBooks\js1.epub",
+                   fileName = "js3.epub"})">js3.epub</a>(2.83 MB)
+        </p>
+    </div>
+</div>
+<p>
+    <h3>Helpfull links:</h3>
+</p>
+<div class="container">
+    <div class="col-lg-5">
+        <h4>w3school.com</h4>
+        <p>Site provides materials not only about JS, here you can find information about HTML, CSS, SQL, ect.</p>
+        <a class="btn btn-default" href="https://www.w3schools.com/js/default.asp">w3school.com</a>
+    </div>
+</div>

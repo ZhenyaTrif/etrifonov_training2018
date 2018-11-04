@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "HTML LIbrary";
+}
+
+<p><h2>HTML LIbrary</h2></p>
+<p>
+    <h3>Books:</h3>
+</p>
+<div class="container">
+    <div class="col-lg-4">
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\HTMLandCSSBooks\HTML_CSS.pdf",
+                   fileName = "HTML_CSS.pdf"})">HTML_CSS.pdf</a>(10.8 MB)
+        </p>
+        <p>
+            <a class="btn btn-default" href="@Url.Action("Download", new { filePath = @"D:\PROJECT\HW14\HW14\Files\HTMLandCSSBooks\HTML_CSS_JS.pdf",
+                   fileName = "HTML_CSS_JS.pdf"})">HTML_CSS_JS.pdf</a>(14.0 MB)
+        </p>
+    </div>
+</div>
+<p>
+    <h3>Helpfull links:</h3>
+</p>
+<div class="container">
+    <div class="col-lg-5">
+        <h4>w3school.com</h4>
+        <p>Site provides materials not only about HTML, here you can find information about CSS, JS, SQL, ect.</p>
+        <a class="btn btn-default" href="https://www.w3schools.com/html/default.asp">w3school.com</a>
+    </div>
+</div>

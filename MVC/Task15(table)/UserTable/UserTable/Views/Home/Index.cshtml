@@ -1,0 +1,84 @@
+﻿@model UserTable.Models.IndexViewModel
+@using UserTable.Helpers
+@{
+    ViewBag.Title = "UserTable";
+}
+
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" id="filterM" type="text" placeholder="Filter" />
+    </div>
+    <div class="col-8">
+        @Html.ActionLink("Add", "Add", new { id = 1 }, new { @class = "btn btn-light" })
+        <input class="btn btn-light" type="submit" name="todo" value="Change" />
+        <input class="btn btn-light" type="submit" name="todo" value="Remove" />
+    </div>
+</div>
+    <br />
+<div class="container-fluid">
+    <table class="table d-sm-table-row table-responsive" id="pagingTable">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+            @foreach (UserTable.Models.User m in Model.Users)
+            {
+                <tr>
+                    <th><input type="radio" name="id" value="@m.UserId" /></th>
+                    <th>@m.Name</th>
+                    <th>@m.MiddleName</th>
+                    <th>@m.LastName</th>
+                    <th>@m.E_mail</th>
+                    <th>@m.Password</th>
+                    <th>@m.Age</th>
+                    <th>@m.Phone</th>
+                    <th>@m.Address</th>
+                </tr>
+
+            }
+        </tbody>
+        <tfoot class="thead-dark">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="col-md-12 text-center">
+        @Html.PageLinks(Model.PageInfo, x=>Url.Action("Index", new { page = x }))
+    </div>
+</div>
+}
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#filterM").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#userTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}
+
